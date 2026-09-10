@@ -1,0 +1,17 @@
+{
+  "id": "frameforge.2d",
+  "name": "FrameForge 2D",
+  "version": "0.4.1",
+  "kind": "local_game",
+  "runtime": "juniorhome.webview",
+  "entry": "site/play.html",
+  "bitnet": {
+    "required": false,
+    "format": "ternary_packed_2bit",
+    "dims": [8, 16],
+    "role": "cpu_policy_logits_only",
+    "mlx_module": "cloudcover95/BitNet-mlx",
+    "fallback": "stdlib_matvec"
+  },
+  "envelope": {"watts_hint": 6, "hz": 60, "bind": "127.0.0.1", "port": 8765}
+}
