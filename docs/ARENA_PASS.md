@@ -1,8 +1,10 @@
-# Arena pass 2026-09-10
+# Arena + chrome pass 2026-09-10
 
-Itch zip: upload `FrameForge2D-itch.zip` (site root = index.html).
-Art lives in `site/js/adapter.js` drawArena.
+Itch zip is ~38 KB: HTML kernel + 17 KB thumb.jpg (no 707 KB cover).
 
-- Neon Hearth: window lights persistent (no frame flicker). Snow cut to 7 static flakes.
-- Bloomreach: rainbow restored. Sun + glow arch top-left aiming down-right. Waterfall on right hill with grey boulders, pool into stream. Stream starts below main platform (~y 404) and runs bottom-left. Flowers on left / sun hill.
-- Alpine: middle three trees moved lower mid-right so they do not cover the mountain horizon. Left pair stays. Snow eased.
+Header on fight page: GitHub (this repo) · Pause/Play · New (reload match) · Menu.
+P / Esc pauses. extras.js sets FFPaused; adapter tick skips sim while paused.
+
+Bloomreach: quarter-sun top-left. Waterfall + rocks on the right-hill ridge (~715,200), pool into stream under the floor.
+Alpine: mid trees at 780/850/922 y~420, off the main platform. Creek from left of left mountain behind the left trees into the lake.
+Hearth: 16 drifting flakes, windows still static.
