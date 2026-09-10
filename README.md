@@ -8,7 +8,7 @@ Hard-split web/itch kernel from [FrameForge](https://github.com/cloudcover95/Fra
 - Couch / CPU / PeerJS party
 - Live: https://cloudcover95.itch.io/frameforge2d
 
-Unreal, This repo is the browser game + JuniorHome local launch.
+This repo is the browser game + JuniorHome local launch.
 
 ```
 python3 -m python.frameforge.cli serve-2d   # from the FrameForge tree
