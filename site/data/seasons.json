@@ -1,0 +1,18 @@
+{
+  "look_style": "ff_toon",
+  "aliases": {
+    "alpine": "alpine_glass",
+    "hearth": "neon_hearth",
+    "emberfall": "sunarch",
+    "bloomreach": "bloomreach"
+  },
+  "lock": {
+    "blast": { "left": -232, "right": 232, "top": 212, "bottom": -128 },
+    "main": { "w": 168, "h": 9 },
+    "plats_extra": [
+      { "id": "plat_ml", "x": -28, "y": 48, "w": 30, "h": 3 },
+      { "id": "plat_mr", "x": 28, "y": 48, "w": 30, "h": 3 }
+    ]
+  },
+  "toon_scale": { "vesper": 1.0, "quill": 1.05, "relay": 1.02, "forge": 1.18 }
+}

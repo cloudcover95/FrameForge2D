@@ -1,0 +1,10 @@
+{
+  "basics": ["tap", "sweep", "drive", "vault", "arc_n", "arc_f", "arc_b", "arc_u", "arc_d", "clinch"],
+  "signatures": {
+    "vesper": { "special": "Gale Pin", "ultimate": "Veil Plunge" },
+    "quill": { "special": "Longshot", "ultimate": "Ridge Volley" },
+    "relay": { "special": "Sigil Step", "ultimate": "Codex Rift" },
+    "forge": { "special": "Slag Guard", "ultimate": "Core Collapse" }
+  },
+  "legal": "Not a Nintendo product. JuniorCloud LLC."
+}

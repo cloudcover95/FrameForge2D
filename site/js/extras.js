@@ -1,8 +1,8 @@
 /* SPDX-License-Identifier: MIT
  * Copyright (c) 2026 JuniorCloud LLC and FrameForge contributors.
  * See /LICENSE and /LICENSE.md. Not a Nintendo product.
+ * Extra plats lock: ±28, y=48, w=30. Local flags only — no fetch in the tick.
  */
-/* Optional rules + fight chrome. Pause / New / P key. */
 (() => {
   const q = new URLSearchParams(location.search);
   const on = (k, def) => { const v = q.get(k); if (v === "0") return false; if (v === "1") return true; return !!def; };
@@ -14,6 +14,7 @@
       return [{ x: -28, y: 48, w: 30, h: 3, solid: false }, { x: 28, y: 48, w: 30, h: 3, solid: false }];
     },
     hitMul(atk) { return this.flags.rage && atk && atk.percent >= 100 ? 1.22 : 1; },
+    trit(v, lo, hi) { if (v < (lo ?? -0.2)) return -1; if (v > (hi ?? 0.2)) return 1; return 0; },
     act() {}
   };
   function bindChrome() {
