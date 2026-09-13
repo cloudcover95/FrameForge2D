@@ -1,3 +1,7 @@
+/* SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 JuniorCloud LLC and FrameForge contributors.
+ * See /LICENSE and /LICENSE.md. Not a Nintendo product.
+ */
 /* Optional rules + fight chrome. Pause / New / P key. */
 (() => {
   const q = new URLSearchParams(location.search);
