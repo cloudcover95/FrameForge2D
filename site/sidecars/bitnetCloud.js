@@ -1,30 +1,18 @@
-/* FrameForge2D BitnetCloud sidecar. Do not rewrite the canvas kernel.
+/* SPDX-License-Identifier: MIT
+ * Copyright (c) 2026 JuniorCloud LLC and FrameForge contributors.
+ * BitNet scores CPU intent only. Does not rewrite the canvas kernel.
  * Not a Nintendo product.
  */
-export async function pollIntent(url) {
-  const r = await fetch(url);
-  const j = await r.json();
-  return {
-    roster: j.roster || 'Forge',
-    lx: Number(j.lx) || 0,
-    ly: Number(j.ly) || 0,
-    buttons: j.buttons | 0,
-    trit: j.trit | 0,
-    profile: j.profile || 'generic_iot',
-    role: 'cpu_intent_pad',
-    sidecar: 'bitnetCloud',
-    legal: 'not a nintendo product',
-  };
-}
-
-export function mergePad(base, guest) {
+export function mergeIntent(base, guest) {
   const out = Object.assign({}, base || {});
   if (!guest) return out;
-  if (guest.trit) {
-    out.lx = guest.lx;
-    out.ly = guest.ly;
-    out.buttons = guest.buttons;
-    out.cpuIntent = guest.trit;
+  if (guest.scale_knockback) guest = Object.assign({}, guest, { scale_knockback: false });
+  out.cpu_intent = guest;
+  if (guest.quant) out.quant = guest.quant;
+  const pad = guest.pad || guest;
+  if (pad && pad.trit) {
+    if (pad.lx != null) out.lx = pad.lx;
+    if (pad.ly != null) out.ly = pad.ly;
   }
   return out;
 }
