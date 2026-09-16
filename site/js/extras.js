@@ -28,12 +28,12 @@
     extraPlats() {
       if (F.elev) {
         const shaft = [];
-        const floors = [18, 36, 54, 72, 90, 108, 126];
+        const floors = [8, 28, 50, 74, 100, 128, 156];
         floors.forEach((y, i) => {
-          const side = i % 2 === 0 ? -22 : 22;
-          shaft.push({ x: side, y, w: 28, h: 3, solid: false, id: "e" + i });
+          const side = i % 2 === 0 ? -24 : 24;
+          shaft.push({ x: side, y, w: 26, h: 3, solid: false, id: "e" + i });
         });
-        shaft.push({ id: "car", x: 0, y: 12, w: 34, h: 3, solid: true, lift: true, y0: 6, y1: 118, spd: 0.28 });
+        shaft.push({ id: "car", x: 0, y: 4, w: 32, h: 3, solid: true, lift: true, y0: -8, y1: 140, spd: 0.22 });
         return shaft;
       }
       if (!F.plats) return [];
