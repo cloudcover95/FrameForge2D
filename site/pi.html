@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>FrameForge2D</title>
+<script src="https://sdk.minepi.com/pi-sdk.js"></script>
+<link rel="stylesheet" href="css/app.css"/>
+<style>
+  body.pi { margin:0; background:#14100a; color:#c4b48a; }
+  #piBar { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:8px 12px; border-bottom:3px solid #5c4a2e; }
+  #piBar button { padding:8px 12px; }
+  #fightFrame { width:100%; height:calc(100dvh - 52px); border:0; background:#2a1a12; }
+  #piStat { font-size:12px; opacity:.8; }
+</style>
+</head>
+<body class="pi">
+<div id="piBar">
+  <b>FRAMEFORGE2D</b>
+  <span id="piStat">Pi Browser: Sign in. Other browsers: fight only.</span>
+  <span>
+    <button type="button" id="btnPi">Sign in with Pi</button>
+    <a href="index.html">Menu</a>
+  </span>
+</div>
+<iframe id="fightFrame" title="fight" src="play.html?mode=cpu&n=2&fill=1&stage=bloomreach"></iframe>
+<script src="js/pibrowser_bootstrap.js"></script>
+<script>
+(async function () {
+  const sandbox = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+  if (typeof Pi !== "undefined") {
+    try { await Pi.init({ version: "2.0", sandbox: sandbox }); } catch (e) {}
+  }
+  const stat = document.getElementById("piStat");
+  document.getElementById("btnPi").onclick = async () => {
+    if (!window.FrameForgePi) { stat.textContent = "SDK missing"; return; }
+    const auth = await window.FrameForgePi.authenticate();
+    stat.textContent = auth && auth.user
+      ? ("Pioneer " + (auth.user.username || auth.user.uid))
+      : "Not in Pi Browser — play still works";
+  };
+})();
+</script>
+</body>
+</html>

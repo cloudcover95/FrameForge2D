@@ -1,0 +1,1 @@
+Elevator sandbox (`elev=1`): stacked shaft + moving car, camera follows height. Not the legal 4-stock floor. Home / Omega / per-user terraform stays a different product — this mode is only a vertical test harness on the 2D host.
