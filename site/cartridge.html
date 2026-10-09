@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>FrameForge2D Cartridge</title>
+<style>
+  body { margin: 0; background: #0e0906; color: #e4d6a4; font-family: ui-monospace, monospace; }
+  #boot { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 12px; }
+  #boot button { padding: 14px 28px; font: inherit; background: #8a9a4c; color: #140a06; border: 3px solid #140a06; }
+</style>
+</head>
+<body>
+<div id="boot">
+  <b>FRAMEFORGE2D</b>
+  <span>Cartridge · auto-run</span>
+  <button type="button" id="go">Insert</button>
+</div>
+<script>
+(function () {
+  const params = new URLSearchParams({
+    mode: "cpu",
+    n: "4",
+    stocks: "4",
+    locals: "1",
+    fill: "1",
+    diff: "easy",
+    stage: "alpine_glass",
+    p1: "vesper",
+    p2: "quill",
+    p3: "relay",
+    p4: "forge",
+    autorun: "1",
+    plats: "1",
+    parry: "1",
+    dodge: "1",
+    rage: "1"
+  });
+  function launch() {
+    location.replace("play.html?" + params.toString());
+  }
+  document.getElementById("go").addEventListener("click", launch);
+  // Auto-insert after short delay (cartridge style)
+  setTimeout(launch, 800);
+})();
+</script>
+</body>
+</html>
